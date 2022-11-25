@@ -18,7 +18,7 @@ use App\Http\Controllers\UsuariosController;
 Route::group(['middleware' => 'web'], function() {
     Route::get('/', 'App\Http\Controllers\HomeController@index');
     Auth::routes();
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 });
 
 Route::get('/usuarios', 'App\Http\Controllers\UsuariosController@index')->middleware('auth');
